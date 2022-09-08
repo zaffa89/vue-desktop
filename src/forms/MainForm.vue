@@ -1,18 +1,18 @@
 <template>
-  <div class="hello">
+  <MainLayout title="Main form">
     <button @click="provaHttpClient"></button>
-  </div>
+  </MainLayout>
 </template>
 
 <script setup>
-
+  import MainLayout from '@/Layouts/MainLayout.vue';
 </script>
 
 <script>
 
 
 export default {
-  name: 'HelloWorld',
+  name: 'MainForm',
   props: {
     msg: String
   },
@@ -31,26 +31,15 @@ export default {
           //timeout: 20000
         })
     }
+  },
+  mounted()
+  {
+    this.$axios.post('prova' , {
+      //data
+    } , 
+    { 
+      //timeout: 20000
+    })
   }
 }
 </script>
-
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<!-- 
-<style scoped>
-h3 {
-  margin: 40px 0 0;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
-}
-</style>
--->
