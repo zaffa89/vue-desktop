@@ -1,10 +1,9 @@
 <template>
-  <MainForm />
-  <!-- <HelloWorld msg="Welcome to Your Vue.js App"/> -->
+  <router-view></router-view>
 </template>
 
 <script setup>
-  import MainForm from './forms/MainForm.vue';  
+  
 </script>
 <script>
 

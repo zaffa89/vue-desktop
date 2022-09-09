@@ -1,24 +1,16 @@
-# vue-desktop
 
-## Project setup
-```
-npm install
-```
+Cose importanti da fare
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+- Routing
 
-### Compiles and minifies for production
-```
-npm run build
-```
+- Generazione pdf
 
-### Lints and fixes files
-```
-npm run lint
-```
+- File manager
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+- Dialogo ECG
+
+- Dialogo Lettore tessere
+
+- Dialogo Wacom
+
+

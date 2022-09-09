@@ -1,6 +1,6 @@
 'use strict'
 
-import { app, protocol, BrowserWindow } from 'electron'
+import { app, protocol, BrowserWindow , Menu } from 'electron'
 import { createProtocol } from 'vue-cli-plugin-electron-builder/lib'
 import installExtension, { VUEJS3_DEVTOOLS } from 'electron-devtools-installer'
 const isDevelopment = process.env.NODE_ENV !== 'production'
@@ -24,7 +24,7 @@ async function createWindow() {
       nodeIntegration: process.env.ELECTRON_NODE_INTEGRATION,
       contextIsolation: !process.env.ELECTRON_NODE_INTEGRATION
     },
-    frame: false
+    //frame: false
   })
 
   if (process.env.WEBPACK_DEV_SERVER_URL) {
@@ -66,6 +66,9 @@ app.on('ready', async () => {
     }
   }
   
+  const mainMenu = Menu.buildFromTemplate(mainMenuTemplate);
+  Menu.setApplicationMenu(mainMenu);
+
   createWindow()
 })
 
@@ -83,3 +86,25 @@ if (isDevelopment) {
     })
   }
 }
+
+//Nuovo menu applicazione
+const mainMenuTemplate = [
+  { 
+    label:'File',
+      submenu: [        
+        {
+          label:'Preferenze'
+        },
+        {
+          type: 'separator'
+        },
+        {
+          label:'Esci',
+          accelerator: 'CmdOrCtrl+Q',
+          click() {
+            app.quit()
+          }
+        }
+      ]
+  }
+]; 

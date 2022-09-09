@@ -9,13 +9,23 @@ axios.defaults.timeout = 5000;
 
 const axiosRequest = axios.create();
 
-import { createPinia } from 'pinia'
-const pinia = createPinia()
+// 3. Create the router instance and pass the `routes` option
+// You can pass in additional options here, but let's
+// keep it simple for now.
+import { createMemoryHistory, createRouter } from "vue-router";
+import { routes } from '@/routes';
+
+const router = createRouter({
+    // 4. Provide the history implementation to use. We are using the hash history for simplicity here.
+    history: createMemoryHistory(),
+    routes, // short for `routes: routes`
+  })
+  
 
 
 const ElectronApp = createApp(App);
 
 ElectronApp.config.globalProperties.$axios = { ...axiosRequest }
-ElectronApp.use(pinia);
+ElectronApp.use(router)
 
 ElectronApp.mount('#app')

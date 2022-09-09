@@ -1,5 +1,5 @@
 <template>
-  <MainLayout title="Main form">
+  <MainLayout title="Accettazioni Medsport">
     <button @click="provaHttpClient"></button>
   </MainLayout>
 </template>
@@ -12,7 +12,6 @@
 
 
 export default {
-  name: 'MainForm',
   props: {
     msg: String
   },
@@ -34,12 +33,14 @@ export default {
   },
   mounted()
   {
+    /*
     this.$axios.post('prova' , {
       //data
     } , 
     { 
       //timeout: 20000
     })
+    */
   }
 }
 </script>
